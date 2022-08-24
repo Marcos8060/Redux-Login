@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { login } from "../redux/features/slices/auth";
@@ -43,7 +42,7 @@ const Login = () => {
   };
 
   if (isLoggedIn) {
-    return <Redirect to="/profile" />;
+    return history("/profile");
   }
 
   return (

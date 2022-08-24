@@ -6,7 +6,7 @@ import authService from "../../../services/auth.service";
 const user = JSON.parse(localStorage.getItem("user"));
 
 export const register = createAsyncThunk(
-  "api/register",
+  "api/register/",
   async ({ username, email, password }, thunkAPI) => {
     try {
       const response = authService.register(username, email, password);
@@ -27,7 +27,7 @@ export const register = createAsyncThunk(
 
 // login
 export const login = createAsyncThunk(
-  "api/login",
+  "api/token/",
   async ({ username, password }, thunkAPI) => {
     try {
       const data = await authService.login(username, password);
